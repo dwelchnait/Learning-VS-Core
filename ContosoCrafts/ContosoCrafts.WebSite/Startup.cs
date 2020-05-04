@@ -31,6 +31,9 @@ namespace ContosoCrafts.WebSite
 
             //add a custom coded service
             services.AddTransient<JsonFileProductService>();
+
+            //add a controller service
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,12 +60,23 @@ namespace ContosoCrafts.WebSite
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
-                endpoints.MapGet("/products", (context) =>
-                 {
-                     var products = app.ApplicationServices.GetService<JsonFileProductService>().GetProducts();
-                     var json = JsonSerializer.Serialize<IEnumerable<Product>>(products);
-                     return context.Response.WriteAsync(json);
-                 });
+
+                //this MapGet will execute in respnse to the word products being added to the url address when
+                //the web page is displayed. this is one way to create a web api (manually).
+                //it will obtain the json file data and return it for display on the web page
+                //normally in chrome, this data is NOT nicely formatted. To get it nicely formatted you will need
+                //    to add a chrome extension called JsonView. Once JsonView is added, close the running web page
+                //    and re-execute the application.
+
+                //endpoints.MapGet("/products", (context) =>
+                // {
+                //     var products = app.ApplicationServices.GetService<JsonFileProductService>().GetProducts();
+                //     var json = JsonSerializer.Serialize<IEnumerable<Product>>(products);
+                //     return context.Response.WriteAsync(json);
+                // });
+
+                //map to controllers
+                endpoints.MapControllers();
             });
         }
     }
