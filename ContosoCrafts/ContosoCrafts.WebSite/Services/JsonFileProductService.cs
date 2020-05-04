@@ -37,5 +37,34 @@ namespace ContosoCrafts.WebSite.Services
                     });
             }
         }
+
+        //use this on your url https://localhost:44375/products/rate?ProductId=jenlooper-cactus&rating=4
+        public void AddRating(string productid, int rating)
+        {
+            IEnumerable<Product> products = GetProducts();
+            var query = products.First(x => x.Id == productid);
+            if (query.Ratings == null)
+            {
+                query.Ratings = new int[] { rating };
+            }
+            else
+            {
+                var ratings = query.Ratings.ToList();
+                ratings.Add(rating);
+                query.Ratings = ratings.ToArray();
+            }
+
+            using (var outputStream = File.OpenWrite(JsonFileName))
+            {
+                JsonSerializer.Serialize<IEnumerable<Product>>(
+                    new Utf8JsonWriter(outputStream, new JsonWriterOptions
+                    {
+                        SkipValidation = true,
+                        Indented = true
+                    }),
+                    products
+                 );
+            }
+        }
     }
 }
