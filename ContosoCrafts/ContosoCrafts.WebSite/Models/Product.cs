@@ -9,6 +9,7 @@ namespace ContosoCrafts.WebSite.Models
 {
     public class Product
     {
+        //add a JsonPropertyName notation to map C# property names which are different then the Json data file attribute name
         [JsonPropertyName("Id")]
         public string ProductId { get; set; }
         public string Maker { get; set; }
