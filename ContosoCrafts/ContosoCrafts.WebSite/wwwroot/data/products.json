@@ -17,5 +17,11 @@
     "maker": "@jenlooper",
     "title": "A beautiful wreaft guide book",
     "description": "Use craft items you have around the house to create wreafts for all occasions"
+  },
+  {
+    "id": "Jenlooper-waterproof",
+    "maker": "@jenlooper",
+    "title": "Water proof guide book",
+    "description": "How to use basic items you have around the house to water proof for all occasions"
   }
 ]
