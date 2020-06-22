@@ -1,0 +1,20 @@
+[
+  {
+    "courseId": "PROG-0101",
+    "name": "Programming Fundamentals with OOP",
+    "hours": 75,
+    "credits": 3.0
+  },
+  {
+    "courseId": "DATA-0150",
+    "name": "Foundations of Database Design",
+    "hours": 75,
+    "credits": 3.0
+  },
+  {
+    "courseId": "CORE-0103",
+    "name": "Communications",
+    "hours": 50,
+    "credits": 2.0
+  }
+]
