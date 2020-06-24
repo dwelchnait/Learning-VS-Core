@@ -9,7 +9,7 @@ namespace SrackDemo.Specs
         private int _MaxSize = 0;
         public bool IsEmpty => _LogicalSize == 0;
 
-        public bool IsFull => _LogicalSize == 2;
+        public bool IsFull => _LogicalSize == _MaxSize;
 
         public Stack(int maxsize)
         {

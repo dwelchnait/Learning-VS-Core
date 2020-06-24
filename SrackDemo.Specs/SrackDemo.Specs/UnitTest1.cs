@@ -26,7 +26,11 @@ namespace SrackDemo.Specs
         public void Can_Specify_Stack_Size_On_Create_Stack(int expected)
         {
             myStack = new Stack(expected);
-            Assert.True(myStack.IsEmpty);
+            for(int i = 0; i< expected; i++)
+            {
+                myStack.Push(i);
+            }
+            Assert.True(myStack.IsFull);
         }
 
         [Fact]
