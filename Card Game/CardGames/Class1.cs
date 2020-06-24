@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CardGames
 {
@@ -34,13 +35,27 @@ namespace CardGames
     {
         public int Count => 52;
 
-        public IEnumerable<PlayingCard> Cards => new List<PlayingCard>();
+        //public IEnumerable<PlayingCard> Cards => new List<PlayingCard>();
+        public IEnumerable<PlayingCard> Cards;
 
         public bool IsEmpty;
 
         public static DeckOfCards OpenNewDeck()
                 => new DeckOfCards();
 
-
+        public DeckOfCards()
+        {
+            List<PlayingCard> theDeck = new List<PlayingCard>();
+            var suits = Enum.GetValues(typeof(CardGames.PlayingCard.CardSuit));
+            var cards = Enum.GetValues(typeof(CardGames.PlayingCard.CardValue));
+            foreach(var suit in suits)
+            {
+                foreach(var card in cards)
+                {
+                    theDeck.Add(new PlayingCard((CardGames.PlayingCard.CardValue)card, (CardGames.PlayingCard.CardSuit)suit));
+                }
+            }
+            Cards = theDeck;
+        }
     }
 }
