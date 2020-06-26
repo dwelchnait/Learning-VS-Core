@@ -12,6 +12,7 @@ namespace SrackDemo.Specs
         // out the tests and place it as a class data member
         Stack myStack;
 
+        [Fact]
         public void Create_Stack()
         {
             myStack = new Stack(2);

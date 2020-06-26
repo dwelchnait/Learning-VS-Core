@@ -78,5 +78,73 @@ namespace CardGame.Specs
             var cards = deck.Cards;
             cards.Should().OnlyHaveUniqueItems();
         }
+
+        [Fact]
+        public void Open_With_Cards_In_Order()
+        {
+            var cards = deck.Cards;
+            cards.Should().BeInAscendingOrder();
+        }
+
+        [Fact]
+        public void Shuffle_Cards_Into_A_Random_Order()
+        {
+            deck.Shuffle();
+            var cards = deck.Cards;
+            //does not check "true" randomness just that it is not
+            //   in the original order.
+            cards.Should().NotBeInAscendingOrder();
+        }
+
+        [Fact]
+        public void Draw_The_Top_Card_From_The_Deck()
+        {
+            var expectedCard =
+                new PlayingCard(ACE, HEARTS);
+            PlayingCard card = deck.DrawCard();
+            card.Should().NotBeNull().And.Be(expectedCard);
+        }
+
+        [Fact]
+        public void Remove_The_Card_From_The_Deck_When_Drawn()
+        {
+            var expectedCard =
+                new PlayingCard(ACE, HEARTS);
+            deck.DrawCard();
+            deck.Cards.Should().NotContain(expectedCard);
+        }
+    
+        // TODO: What happens when the last card is drawn?
+        [Fact]
+        public void Draw_The_Last_Card()
+        {
+            int decksize = deck.Count;
+            for (int i = 0; i < decksize; i++)
+            {
+                deck.DrawCard();
+            }
+            Assert.True(deck.IsEmpty);
+        }
+        // TODO: What happens if I draw from an empty deck?
+        [Fact]
+        public void Will_Throw_NoDraw_When_Empty_Deck_Is_Drawn()
+        {
+            int decksize = deck.Count;
+            for (int i = 0; i < decksize; i++)
+            {
+                deck.DrawCard();
+            }
+            deck.DrawCard();
+//            Assert.Throws<NoDrawException>(()=> deck.DrawCard());
+        }
+    }
+
+    public class The_GoFish_Game_Must
+    {
+
+    }
+    public class The_Player_Must
+    {
+
     }
 }
