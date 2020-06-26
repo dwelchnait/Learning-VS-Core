@@ -4,7 +4,7 @@
 namespace CardGames
 {
    
-    internal class NoDrawException : Exception
+    public class NoDrawException : Exception
     {
  
     }

@@ -134,8 +134,9 @@ namespace CardGame.Specs
             {
                 deck.DrawCard();
             }
-            deck.DrawCard();
-//            Assert.Throws<NoDrawException>(()=> deck.DrawCard());
+           
+            Assert.Throws<NoDrawException>(() => deck.DrawCard());
+            
         }
     }
 
