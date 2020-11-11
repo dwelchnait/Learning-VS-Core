@@ -17,8 +17,8 @@ WriteLine(args.Length);
 //body of main method - Executable Statements
 var friend = new Person("Don", "Welch", 65);
 WriteLine(friend);
-int years = PromptUser("How long have you known Don:\t");
-WriteLine($"{years} is a long time");
+//int years = PromptUser("How long have you known Don:\t");
+//WriteLine($"{years} is a long time");
 
 string data = friend.ToString();
 WriteLine(data);
@@ -31,8 +31,17 @@ WriteLine($"first={first} last={last} age={age}");
 //use relative addressing to change the location of output
 //default is in bin/xxxx/net5.0  where xxxx is either Debug or Release
 //      wherever the .exe is located
-File.WriteAllText("../../../Demo", friend.ToString());
 
+//output
+File.WriteAllText("../../../Demo", friend.ToString());
+//input
+int total = 0;
+foreach(string fileline in File.ReadAllLines("../../../NumberFile.txt"))
+{
+    int num = int.Parse(fileline);
+    total += num;
+}
+WriteLine($"total is {total}");
 
 //programmer defined methods and types - declartions
 
