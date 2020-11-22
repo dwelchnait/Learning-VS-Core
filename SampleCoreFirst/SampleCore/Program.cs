@@ -7,21 +7,27 @@ using System;
 using System.IO;
 using static System.Console;
 
-string[] students = new string[] { "Gartner", "Olthoff", "Kozmak", "Zielke", "Gauthier", "Murray", "Chen", "Emmanuel" };
+string[] studentsA02 = new string[] { "Gartner", "Olthoff", "Kozmak", "Zielke", "Gauthier", "Murray", "Chen", "Emmanuel" };
 
-string[] otherstudents = new string[] { "Best", "Brower", "Cairns", "Del Colle", "Neufeld", "Pang", "Popik", "Sayong", "Walton",  "Wu"};
+string[] otherstudentsA02 = new string[] { "Best", "Brower", "Cairns", "Del Colle", "Neufeld", "Pang", "Popik", "Sayong", "Walton",  "Wu"};
 
-string[] nonstudents = new string[] { "lopez", "Riad", "Sylvester", "Tran", "Wilber" };
+string[] nonstudentsA02 = new string[] { "lopez", "Riad", "Sylvester", "Tran", "Wilber" };
+
+string[] studentsA03 = new string[] { "Lawa", "Braydon", "Zach", "Midori", "William", "Norris", "Josh" };
+
+string[] nonstudentsA03 = new string[] { "Dominic", "Piery", "Mathieu", "Sinjan", "James", "Lucas", "Chandandeep", "Clayton", "Jashandeep", "Michal" };
+
+string[] otherstudentsA03 = new string[] { "Rod", "Zhe", "Jeremy", "Sang"};
 
 Random rdn = new Random();
     
 int index = 0;
 int assigned = 0;
 string accept = "";
-while (assigned < otherstudents.Length)
+while (assigned < nonstudentsA03.Length)
 {
-    index = rdn.Next(1, otherstudents.Length);
-    WriteLine($"student {otherstudents[index - 1]}, accept (y,n)\t");
+    index = rdn.Next(1, nonstudentsA03.Length);
+    WriteLine($"student {nonstudentsA03[index - 1]}, accept (y,n)\t");
     accept = ReadLine();
     if (accept.ToUpper().Equals("Y"))
     {
