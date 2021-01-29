@@ -34,7 +34,7 @@ while (assigned < nonstudentsA03.Length)
         assigned++;
     }
 }
-    
+
 //WriteLine("Hello World from .Net 5");
 
 ////you still have access to thing like the args on the Main()
