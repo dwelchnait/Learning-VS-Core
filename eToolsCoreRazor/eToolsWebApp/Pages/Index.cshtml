@@ -1,0 +1,33 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to @Model.CourseNumber</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <form method="post">
+        <label>
+            Course: <input type="text" asp-for="CourseNumber" />
+        </label>
+        <label>
+            Term Start: <input type="date" asp-for="StartDate" />
+        </label>
+        <label>
+            Difficulty: <select asp-for="Rating">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+        </label>
+        <button type="submit">Submit</button>
+    </form>
+
+    <p>The time is @DateTime.Now.ToShortTimeString()
+                        .@Html.Raw(Model.Message)
+    </p>
+</div>
