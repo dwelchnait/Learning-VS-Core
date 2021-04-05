@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ClassLessWebApp</title>
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
+    <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
+    <link href="~/lib/awsm.css/dist/awsm.css" rel="stylesheet" />
+    @*<link href="~/lib/awsm.css/dist/awsm_theme_big-stone.css" rel="stylesheet" />*@
+
+    @* always have your own css at the head: remember Last Rule Wins*@
+    <link rel="stylesheet" href="~/css/site.css" />
+    @RenderSection("HtmlHead", required: false)
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a asp-area="" asp-page="/Index">
+                    <i class="fas fa-circle-notch"></i>
+                    ClassLessWebApp</a></li>
+            </ul>
+            <ul>
+                <li>
+                    <a asp-area="" asp-page="/Index">Home</a>
+                </li>
+                <li>
+                    <a asp-area="" asp-page="/Privacy">Privacy</a>
+                </li>
+                <li>
+                    <a asp-area="" asp-page="/Simpleform">2 column form</a>
+                </li>
+            </ul>
+            <partial name="_LoginPartial" />
+        </nav>
+    </header>
+
+    <main role="main">
+        @RenderBody()
+    </main>
+
+
+    <footer>
+        <p>
+            &copy; 2021 - ClassLessWebApp - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </p>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    @*<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>*@
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

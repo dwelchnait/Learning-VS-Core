@@ -1,0 +1,55 @@
+﻿body {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+    /* the > means immediate child*/
+    body > header, body > main, body > footer {
+        position: relative;
+        max-width: 80rem;
+        margin: 0 auto;
+    }
+
+    body > header {
+        max-width: 100%;
+        margin: 0;
+    }
+
+        body > header > nav {
+            display: grid;
+            grid-template-columns: auto 80rem auto;
+            background-color: black;
+            color: white;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+            body > header > nav > li {
+                margin: 1rem;
+            }
+
+        body > header a, body > header a:visited {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+header > nav > ul:last-child {
+    text-align: right;
+}
+
+nav > ul > li {
+    margin-top: 0.25em;
+}
+
+main > *:first-child {
+    margin-top: 1rem;
+}
+
+footer a, footer a:visited {
+    text-decoration: none;
+}
+
+body > footer{
+    margin-top:20px;
+}

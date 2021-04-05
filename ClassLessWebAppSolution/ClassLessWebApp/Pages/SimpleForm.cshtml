@@ -1,0 +1,39 @@
+﻿@page
+@model ClassLessWebApp.Pages.SimpleFormModel
+@{
+}
+@section HtmlHead{
+    <style type="text/css">
+        main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap:20px;
+        }
+        main > form{
+            max-width: auto;
+        }
+
+        @@media (min-width: 40rem) {
+            form{
+                max-width:100%;
+            }
+        }
+    </style>
+ }
+
+<form method="post">
+    <fieldset>
+        <legend>drop us a message</legend>
+        <label>Name: </label>
+        <input type="text" />
+        <label>Email: </label>
+        <input type="text" />
+        <label>Message:</label>
+        <textarea></textarea>
+    </fieldset>
+</form>
+
+<section>
+    <h2>Contact Us</h2>
+    <p>You can contact us using the form on this page.</p>
+</section>

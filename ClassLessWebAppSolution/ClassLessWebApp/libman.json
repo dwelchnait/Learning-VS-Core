@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "defaultProvider": "jsdelivr",
+  "libraries": [
+    {
+      "library": "awsm.css@3.0.7",
+      "destination": "wwwroot/lib/awsm.css/"
+    },
+    {
+      "provider": "cdnjs",
+      "library": "font-awesome@5.15.3",
+      "destination": "wwwroot/lib/font-awesome/"
+    }
+  ]
+}
